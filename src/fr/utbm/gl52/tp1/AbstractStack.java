@@ -4,10 +4,16 @@
 package fr.utbm.gl52.tp1;
 
 /**
+ * implements {@link IStack}
+ * An abstract stack class created pool common behavior of stacks
+ * 
  * @author dbissari
- * @param <T>
- *
+ * @param <T> The type of the element which will be stored in the stack
  */
 public abstract class AbstractStack<T> implements IStack<T> {
-	// TODO Some abstract class with nothing to put in it
+
+	@Override
+	public boolean isEmpty() {
+		return this.size() == 0;
+	}
 }

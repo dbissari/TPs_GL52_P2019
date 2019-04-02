@@ -4,13 +4,15 @@
 package fr.utbm.gl52.tp1;
 
 /**
+ * extends {@link AbstractStack}
+ * A stack implemented with a linked list using {@link LinkedListElement}
+ * 
  * @author dbissari
- * @param <T>
- *
+ * @param <T> The type of the element which will be stored in the array stack
  */
 public class LinkedStack<T> extends AbstractStack<T> {
 	
-	LinkedListElement<T> firstElement;
+	private LinkedListElement<T> firstElement;
 	private int size;
 
 	public LinkedStack() {
@@ -39,11 +41,6 @@ public class LinkedStack<T> extends AbstractStack<T> {
 	}
 
 	@Override
-	public boolean isEmpty() {
-		return this.size == 0;
-	}
-
-	@Override
 	public int size() {
 		return this.size;
 	}
@@ -54,9 +51,12 @@ public class LinkedStack<T> extends AbstractStack<T> {
 	}
 
 	/**
+	 * implements {@link IStackIterator}
+	 * An iterator to loop over an {@link LinkedStack} elements
+	 * 
 	 * @author dbissari
-	 *
 	 */
+	@SuppressWarnings("synthetic-access")
 	public class LinkedStackIterator implements IStackIterator<T> {
 		
 		private LinkedListElement<T> currentElement = LinkedStack.this.firstElement;

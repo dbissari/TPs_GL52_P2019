@@ -6,13 +6,15 @@ package fr.utbm.gl52.tp1;
 import java.util.ArrayList;
 
 /**
+ * extends {@link AbstractStack}
+ * A stack implemented with an {@link ArrayList}
+ * 
  * @author dbissari
- * @param <T>
- *
+ * @param <T> The type of the element which will be stored in the array stack
  */
 public class ArrayStack<T> extends AbstractStack<T> {
 	
-	ArrayList<T> stackList;
+	private ArrayList<T> stackList;
 
 	public ArrayStack() {
 		super();
@@ -38,11 +40,6 @@ public class ArrayStack<T> extends AbstractStack<T> {
 	}
 
 	@Override
-	public boolean isEmpty() {
-		return this.stackList.isEmpty();
-	}
-
-	@Override
 	public int size() {
 		return this.stackList.size();
 	}
@@ -53,9 +50,12 @@ public class ArrayStack<T> extends AbstractStack<T> {
 	}
 
 	/**
+	 * implements {@link IStackIterator}
+	 * An iterator to loop over an {@link ArrayStack} elements
+	 * 
 	 * @author dbissari
-	 *
 	 */
+	@SuppressWarnings("synthetic-access")
 	public class ArrayStackIterator implements IStackIterator<T> {
 		
 		private int currentIndex = ArrayStack.this.stackList.size()-1;

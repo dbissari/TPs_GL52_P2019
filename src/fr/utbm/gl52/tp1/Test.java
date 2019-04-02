@@ -30,7 +30,6 @@ public class Test {
 			myLinkedStack.push(value);
 		});
 		
-		/*
 		while (!myArrayStack.isEmpty()) {
 			try {
 				System.out.println(
@@ -52,7 +51,6 @@ public class Test {
 				e.printStackTrace();
 			}
 		}
-		*/
 		
 		IStackIterator<Integer> iterator = myArrayStack.iterator();
 		while (iterator.hasNext()) {
