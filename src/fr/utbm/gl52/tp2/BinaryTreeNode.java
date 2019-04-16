@@ -9,6 +9,6 @@ package fr.utbm.gl52.tp2;
  * @author dbissari
  * @param <T> The type of the element which will be stored in the node
  */
-public class BinaryTreeNode<T> extends AbstractBinaryTreeNode<T> {
+public class BinaryTreeNode<T> extends AbstractBinaryTreeNode<T, BinaryTreeNode<T>> {
 	// TODO Maybe implement something
 }

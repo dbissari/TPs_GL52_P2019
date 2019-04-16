@@ -12,9 +12,9 @@ package fr.utbm.gl52.tp2;
  */
 public abstract class AbstractTreeNode<T, U extends ITreeNode<T, U>> implements ITreeNode<T, U> {
 	
-	private U parent;
+	protected U parent;
 
-	private T value;
+	protected T value;
 
 	@Override
 	public T getValue() {

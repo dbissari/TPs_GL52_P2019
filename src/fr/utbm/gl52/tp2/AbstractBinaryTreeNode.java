@@ -10,19 +10,20 @@ import java.util.ArrayList;
  * 
  * @author dbissari
  * @param <T> The type of the element which will be stored in the node
+ * @param <N> The type of the tree nodes
  */
-public abstract class AbstractBinaryTreeNode<T> extends AbstractTreeNode<T, AbstractBinaryTreeNode<T>> {
+public abstract class AbstractBinaryTreeNode<T, N extends AbstractBinaryTreeNode<T, N>> extends AbstractTreeNode<T, N> {
 
-	private AbstractBinaryTreeNode<T> leftChild;
+	protected N leftChild;
 	
-	private AbstractBinaryTreeNode<T> rightChild;
+	protected N rightChild;
 
 	/**
 	 * Gets the left child node
 	 * 
 	 * @return The left child node
 	 */
-	public AbstractBinaryTreeNode<T> getLeftChild() {
+	public N getLeftChild() {
 		return this.leftChild;
 	}
 
@@ -31,7 +32,7 @@ public abstract class AbstractBinaryTreeNode<T> extends AbstractTreeNode<T, Abst
 	 * 
 	 * @param leftChild The new left child node
 	 */
-	public void setLeftChild(AbstractBinaryTreeNode<T> leftChild) {
+	public void setLeftChild(N leftChild) {
 		this.leftChild = leftChild;
 	}
 
@@ -40,7 +41,7 @@ public abstract class AbstractBinaryTreeNode<T> extends AbstractTreeNode<T, Abst
 	 * 
 	 * @return The right child node
 	 */
-	public AbstractBinaryTreeNode<T> getRightChild() {
+	public N getRightChild() {
 		return this.rightChild;
 	}
 
@@ -49,17 +50,16 @@ public abstract class AbstractBinaryTreeNode<T> extends AbstractTreeNode<T, Abst
 	 * 
 	 * @param rightChild The new right child node
 	 */
-	public void setRightChild(AbstractBinaryTreeNode<T> rightChild) {
+	public void setRightChild(N rightChild) {
 		this.rightChild = rightChild;
 	}	
-	
+
 	@Override
-	public ArrayList<AbstractBinaryTreeNode<T>> getChildren() {
-		ArrayList<AbstractBinaryTreeNode<T>> children = new ArrayList<>();
+	public ArrayList<N> getChildren() {
+		ArrayList<N> children = new ArrayList<>();
 		children.add(this.leftChild);
 		children.add(this.rightChild);
 		
 		return children;
 	}
-	
 }
